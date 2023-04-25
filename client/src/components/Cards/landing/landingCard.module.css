@@ -1,0 +1,36 @@
+.caja_cards{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: url('../../Paginas/SearchBar/img/bar_img.jpg');
+    background-size:cover; /* para hacer que la imagen ocupe todo el espacio disponible */
+    
+    background-repeat:no-repeat; /* para evitar que la imagen se repita */
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    width: 425px;
+    background: #F7971E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-bottom: 30px;
+    padding: 30px;
+    
+    border-radius: 12px;
+    -webkit-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.67);
+-moz-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.67);
+box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.67);
+transition: 0.5s;
+
+     
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.card p{
+    font-size: 1.13em;
+    margin: auto;
+    
+}

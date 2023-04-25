@@ -1,0 +1,107 @@
+.wrapper_box{
+    min-height: 110vh;
+    background-color:darkred;
+  }
+.caja_landing{
+    height: 50vh;
+    width: 100%;
+    transition: 0.3s ease;
+    background-image: url('../img/Cover_img.png');
+    background-size: cover; /* para hacer que la imagen ocupe todo el espacio disponible */
+    background-repeat: no-repeat; /* para evitar que la imagen se repita */
+     background-position: bottom; /* para centrar la imagen en la pantalla */
+     background-attachment: fixed;
+     background-color: rgb(60, 60, 60);
+     background-blend-mode: soft-light;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+}
+.caja_scroll{
+    height: 70vh;
+    transition: 0.4s ease;
+    width: 100%;
+    background-image: url('../img/Cover_img.png');
+    background-size: cover; /* para hacer que la imagen ocupe todo el espacio disponible */
+    background-repeat: no-repeat; /* para evitar que la imagen se repita */
+     background-position: bottom; /* para centrar la imagen en la pantalla */
+     background-attachment: fixed;
+     background-color: rgb(55, 55, 55);
+     background-blend-mode: soft-light;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.titulo{
+    text-shadow: 2px 2px 3px black;
+    font-size: 2.6em;
+    font-family:'Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif';
+    position: absolute;
+    color: white;
+    margin: 20px;
+}
+
+.caja_spam{
+    text-shadow: 2px 2px 3px black;
+    font-family:'Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 40px;
+    font-size: 1.2em;
+    color: white;
+    font-weight: 900;
+    font-family: 'Comic Sans MS';
+    
+}
+.NavButton{
+    text-shadow: none;
+    background-color: rgb(255, 249, 242);
+    text-decoration: none;
+    color: black;
+    width: 20%;
+    height: 25%;
+    border: none;
+    font-family: 'Comic Sans MS';
+    border-radius: 5px;
+    font-size: 0.95em;
+    font-weight: 900;
+    border: 2.8px solid black;
+    transition: 0.4s;
+    -webkit-box-shadow: 10px 11px 5px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 11px 5px -4px rgba(0,0,0,0.75);
+box-shadow: 10px 11px 5px -4px rgba(0,0,0,0.75);
+text-align: center;
+
+    
+}
+
+.NavButton:hover{
+    background-color: gold;
+    transform: scale(0.93);
+
+}
+.footer{
+    background-color: black;
+    color: white;
+    
+    height: 70px;
+}
+.footer ul{
+    padding-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.footer li{
+    margin-left: 5%;
+}
+h2{
+    margin: 20px;
+}
+
+
+

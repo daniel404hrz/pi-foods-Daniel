@@ -1,0 +1,99 @@
+.box{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+
+    
+}
+
+.box_form{
+    color: antiquewhite;
+    font-size: 1em;
+    padding: 0px 20px;
+    display: flex;
+    width: 50%;
+    border: 2px solid white;
+    box-shadow: inset 1px 1px 22px 4px whitesmoke;
+    border-radius: 12px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+    padding-bottom: 30px;
+    
+    
+    
+}
+.box_form input{
+    margin: 8px;
+   
+    border-radius: 3px;
+}
+
+.box_inputs{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    
+    
+}
+h2{
+    text-align: center;
+    font-size: 1.7em;
+}
+.box_check {
+    display: grid;
+    grid-template-columns: repeat(2,120px);
+    
+    justify-content: center;
+    
+    margin-top: 20px;
+  }
+  
+  .box_check div{
+    width: 120px;/* Resta 5px para el margen entre las cajas */
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    
+    justify-content: space-between;
+  }
+  .box_inputs_form{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding-top: 13px;
+    
+  }
+  .box_form button{
+    border: none;
+    width: 150px;
+    height: 25px;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-top: 30px;
+    align-self: center;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+.box_form button:hover{
+  background-color: gold;
+  transform: scale(0.96);
+}
+textarea {
+  resize:none;
+  height: fit-content;
+  
+  
+}
+.success{
+  border: 2px solid green;
+  
+}
+.error{
+  border: 1px solid red;
+
+}
+.error_text{
+  color: rgb(255, 42, 42);
+  font-weight: 700;
+}
