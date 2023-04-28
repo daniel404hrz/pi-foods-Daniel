@@ -4,11 +4,13 @@ body{
     background-repeat: no-repeat; /* para evitar que la imagen se repita */
     background-color: rgb(70, 70, 70);
     background-blend-mode: soft-light;
+    height: auto;
     
     
     
 }
 .wrapper_box{
+    
  padding-top: 30px;
  display: grid;
  grid-template-columns: 27% 27%;
@@ -22,11 +24,14 @@ body{
     
   }
 .buttons{
-    
+    display: flex;
     grid-column: 1/3;
     margin-bottom:10vh;
     width: fit-content;
+    height: fit-content;
+    align-items: center;
     background-color: transparent;
+    flex-wrap: wrap;
 }
 .loading{
     font-size: 2.8em;
@@ -104,5 +109,35 @@ body{
         font-size: 14px;
     }
 }
+.pageNumbers {
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+}
+.pageNumbers p{
+    margin: 2px;
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 8px;
+    width: 40px;
+    height: 30px;
+    background-color: whitesmoke;
+    user-select: none;
+    transition: 0.2s;
+    font-weight: 700;
 
+}
+.pageNumbers p:hover{
+    
+    background-color: gold;
 
+}
+.pageNumbers p:active{
+    transform: scale(0.9);
+    
+
+}
+.pageNumbers p:focus {
+    background-color: gold;
+  }

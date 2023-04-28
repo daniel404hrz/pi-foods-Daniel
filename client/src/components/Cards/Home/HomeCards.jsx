@@ -3,7 +3,7 @@ import styles from './HomeCard.module.css'
 import {NavLink } from 'react-router-dom';
 import anonima from './img/anonima.webp'
 
-export default function HomeCards ({id ,image,title, dietTypes}){
+export default function HomeCards ({id ,image,title, dietTypes, healthScore}){
    
     return (
         <div  className={styles.card }>
@@ -14,9 +14,10 @@ export default function HomeCards ({id ,image,title, dietTypes}){
                </h2></NavLink>
                
                <div className={styles.diets}>
-               <p>Diets:</p>
-                {dietTypes.map(diet=> <li>{diet}</li>)}
+               <b>Diets:</b>
+                {dietTypes.map(diet=> <li key={diet}>{diet}</li>)}
                 </div>
+                <b className={styles.health}>healthScore: {healthScore}</b>
                
                
            </div>

@@ -11,7 +11,7 @@ export default function Selectores({diets}){
         dispatch(orderRecipes(event.target.value))
     }
     return(
-        <div className={styles.barras} >
+        <div className={styles.barras}>
             <div className={styles.select_diets}>
             <label htmlFor="origen">Origen</label>
                 <select id="origen" onChange={FilterDispatch}>
@@ -24,7 +24,7 @@ export default function Selectores({diets}){
                 <label htmlFor="filter">DietTypes: </label>
             <select id='filter' onChange={FilterDispatch}>
                 <option value="All">All</option>
-                {diets.map(dieta=><option value={dieta.name}>{dieta.name}</option>)}
+                {diets.map(dieta=><option key={dieta.name} value={dieta.name}>{dieta.name}</option>)}
             </select>
             </div>
             <div className={styles.select_diets}>

@@ -44,7 +44,7 @@ router.get('/diets', async(req,res)=>{
             });
           }
         const dietTypes = await Diets.findAll({attributes: {
-            exclude: ['createdAt', 'updatedAt']
+            exclude: ['createdAt', 'updatedAt','id']
           }});
         res.send(dietTypes)
     } catch (error) {

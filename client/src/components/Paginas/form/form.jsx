@@ -1,13 +1,17 @@
-import { useEffect, useState } from 'react'
+import {useState } from 'react'
 import styles from './form.module.css'
-import axios from 'axios'
+
 import {verify } from './verify'
 import { onSubmit } from '../../../redux/actions'
 import { colorFunction } from './funciones'
 
-export function Form(){
-    const [diets, setDiets] = useState([])
-    const [color, setColor] = useState({})
+export function Form({diets}){
+    
+    const [color, setColor] = useState({
+      title: '',
+      summary:'',
+      healthScore:'',
+    })
     
     
     const [form, setform]= useState({
@@ -41,14 +45,6 @@ const [errors, setErrors] = useState({
     
     setErrors(verify({ ...form, dietTypes: newSelectedDiets }, "dietTypes", errors));
   };
-  
-    useEffect(()=>{
-        axios.get('http://localhost:3001/diets')
-        .then(response=>{
-            setDiets(response.data)
-        })
-    },[setDiets])
-
     const onChange=(event)=>{
         const property = event.target.name;
         const value= event.target.value;
@@ -56,14 +52,13 @@ const [errors, setErrors] = useState({
 
         setform(newSelectedDiets)
         setErrors(verify(newSelectedDiets, property,errors) )
-        setColor(colorFunction(property, errors))
+        setColor(colorFunction(property, errors, color))
     }
     
     
     const handleSubmit=async(event)=>{
-        
 
-        event.preventDefault();
+      event.preventDefault();
 
         const verificar = Object.values(errors).every(value=> {
             return value.length === 0;
@@ -74,6 +69,8 @@ const [errors, setErrors] = useState({
           try {
             await onSubmit(form)
             alert(`receta creada exitosamente`)
+            // window.location.reload();
+            event.target.reset()
             
           } catch (error) {
             alert(`error al crear la receta: ${error.message}`)
@@ -95,13 +92,15 @@ const [errors, setErrors] = useState({
                 
                 <div className={styles.box_inputs}>
                 <h2>Crear Receta</h2>
-                    <label htmlFor="title">Nombre: </label>
+                <b>Obligatorios = name*</b>
+                <br />
+                    <label htmlFor="title">Nombre:* </label>
                 <input type="text" id="title" name='title' onChange={onChange} className={color.title} />
                 {errors.title && <p className={styles.error_text}>{errors.title}</p>}
-                <label htmlFor="summary">Resumen: </label>
+                <label htmlFor="summary">Resumen:* </label>
                 <textarea type="textarea" id='summary' name='summary' onChange={onChange} className={color.summary}/>
                 {errors.summary && <p className={styles.error_text}>{errors.summary}</p>}
-                <label htmlFor="healthScore">Health Score: </label>
+                <label htmlFor="healthScore">Health Score:* </label>
                 <input type="number" min="0" id="healthScore" name='healthScore' onChange={onChange} className={color.healthScore}/>
                 {errors.healthScore &&<p className={styles.error_text}>{errors.healthScore}</p>}
                 <label htmlFor="steps">Pasos: </label>
@@ -115,7 +114,7 @@ const [errors, setErrors] = useState({
                 <label htmlFor="image">Imagen: </label>
                 <input type="text" id="image" name='image' onChange={onChange}/>
                 
-                <label htmlFor="">Dietas: </label>
+                <label htmlFor="">Dietas:* </label>
                 {errors.dietTypes && <p className={styles.error_text}>{errors.dietTypes}</p>}
                 {diets.length ? 
   <div className={styles.box_check}>

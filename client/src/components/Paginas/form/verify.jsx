@@ -53,8 +53,8 @@ const validaciones =(form,value,errors)=>{
 }
 export function verify(form, value,errors) {
     
-  
-    
+
+
   
     return validaciones(form,value,errors) ;
   }

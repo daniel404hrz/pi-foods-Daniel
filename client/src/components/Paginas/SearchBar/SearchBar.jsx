@@ -36,7 +36,7 @@ export default function SearchBar(){
             </div>
            
             {!location.pathname.includes('/detail/') && !location.pathname.includes('/form') &&<div className={styles.caja_input}>
-            <label for= 'buscar'>🔎</label>
+            <label htmlFor= 'buscar'>🔎</label>
             <input id='buscar' type="text" value={value} onChange={inputChange}/>
             <button id='buscar' onClick={handleSearch}>Buscar</button>
             </div> }

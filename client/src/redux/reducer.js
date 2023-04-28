@@ -4,6 +4,7 @@ const initialState = {
     
   };
 
+
 const reducer=(state = initialState, action) =>{
     switch(action.type){
         case 'GET_RECIPES':
@@ -11,10 +12,18 @@ const reducer=(state = initialState, action) =>{
         case 'FILTER':
             if(action.payload === 'All') return {...state, recipes:state.allRecipes}
             else if(action.payload === 'bdRecipes'){
-                return{...state,recipes:state.allRecipes.filter(recipe => recipe.bdRecipe)}}
+                const obj = {...state,recipes:state.allRecipes.filter(recipe => recipe.bdRecipe)}
+                return obj.recipes.length ? obj :{...state,recipes:[false]}
+            }
+                
             else if(action.payload === 'ApiRecipes'){
-                return{...state,recipes:state.allRecipes.filter(recipe => !recipe.bdRecipe)}}
-            else return{...state, recipes: state.allRecipes.filter(recipe => recipe.dietTypes.includes(action.payload))}
+                const obj  ={...state,recipes:state.allRecipes.filter(recipe => !recipe.bdRecipe)}
+                return obj.recipes.length ? obj :{...state,recipes:[false]}
+            }
+            else {
+                const obj = {...state, recipes: state.allRecipes.filter(recipe => recipe.dietTypes.includes(action.payload))}
+                return obj.recipes.length ? obj :{...state,recipes:[false]}
+            }
         case 'ORDER':
             if(action.payload === 'None')return {...state, recipes:state.recipes}
             else if(action.payload === 'ascendente')return {...state, recipes:[...state.recipes].sort((a, b) => a.title.localeCompare(b.title))}
@@ -26,8 +35,9 @@ const reducer=(state = initialState, action) =>{
 
         default:
             return{...state}
-        
+       
         
     }
+    
 }
 export default reducer

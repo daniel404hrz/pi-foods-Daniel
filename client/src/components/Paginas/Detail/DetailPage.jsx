@@ -28,9 +28,9 @@ export default function DetailPage (){
         
         <img className={styles.recipe_img} src={data.image ? data.image: img} alt={data.title} />
         </div>
-        <ul className={styles.diets}><b>Dietas: </b> {data.dietTypes.map(diet=> <li>{diet}</li>)}</ul>
+        <ul className={styles.diets}><b>Dietas: </b> {data.dietTypes.map(diet=> <li key={diet}>{diet}</li>)}</ul>
         
-        <ol className={styles.lista}><b>Pasos:</b>  {data.steps.length && data.steps.map(steps =><li>{steps.step}</li> )}</ol>
+        <ol className={styles.lista}><b>Pasos:</b>  {data.steps.length && data.steps.map(steps =><li key={steps.step}>{steps.step}</li> )}</ol>
 
     </div>): (<img className={styles.loading} src='https://art.pixilart.com/ca55d1f91b2cb0d.gif'alt='Loading'/>)}
         </div>

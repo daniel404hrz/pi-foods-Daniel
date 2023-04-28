@@ -5,7 +5,7 @@ const axios = require('axios')
 const { Op } = require('sequelize');
 
 const getApiInfo = async () => {
-    const apiUrl =  await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=20`);
+    const apiUrl =  await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`);
     
     const apiInfo = await apiUrl.data.results.map(e => {
         return {
@@ -48,14 +48,14 @@ const getApiInfoById = async (ID) => {
         }
          
     
-    const {id,image,title,diets,summary,spoonacularScore,healthScore,analyzedInstructions} = recetaAPI.data
+    const {id,image,title,diets,summary,spoonacularScore,healthScore,analyzedInstructions,vegetarian} = recetaAPI.data
     
-    return {id,image,title,dietTypes:diets,summary,spoonacularScore,healthScore,steps:toSteps(analyzedInstructions)};
+    return {id,image,title,dietTypes:[...diets, vegetarian ? "vegetarian" : null].filter(Boolean),summary,spoonacularScore,healthScore,steps:toSteps(analyzedInstructions)};
 };
 
 
 const getDietsInfo=async()=>{
-    const apiUrl =  await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`);
+    const apiUrl =  await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=50`);
     const dietas = []
     const response = apiUrl.data.results.flatMap((receta)=> receta.diets)
     apiUrl.data.results.forEach((receta) => {

@@ -4,7 +4,7 @@ import HomeCards from "./HomeCards"
 export default function MapCards({recipes}){
     return(
         <>
-        {recipes.map(({id, title,image,dietTypes}) => {
+        {recipes[0] && recipes.map(({id, title,image,dietTypes,healthScore}) => {
             
         return (
           <HomeCards
@@ -13,6 +13,7 @@ export default function MapCards({recipes}){
           image={image}
           title={title}
           dietTypes={dietTypes}
+          healthScore={healthScore}
           
         />
         );
