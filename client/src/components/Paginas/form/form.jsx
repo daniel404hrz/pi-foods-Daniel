@@ -119,9 +119,9 @@ const [errors, setErrors] = useState({
                 {diets.length ? 
   <div className={styles.box_check}>
     {diets.map(diet => 
-      <div key={diet}>
-        <label htmlFor={diet}>{diet}</label>
-        <input type="checkbox" id={diet}  value={diet} onChange={handleDietChange} />
+      <div key={diet.name}>
+        <label htmlFor={diet.name}>{diet.name}</label>
+        <input type="checkbox" id={diet.name}  value={diet.name} onChange={handleDietChange} />
         
       </div>
       
