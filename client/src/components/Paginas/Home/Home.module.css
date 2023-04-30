@@ -1,8 +1,7 @@
-body{
-    
-}
+
 .wrapper_box{
     height: 100%;
+   
     background-image: url('./img/fondo.jpg');
     background-size:cover; /* para hacer que la imagen ocupe todo el espacio disponible */
     background-repeat: no-repeat; /* para evitar que la imagen se repita */
@@ -93,6 +92,8 @@ body{
     .wrapper_box{
         grid-template-columns: 90%;
         grid-gap: 0%;
+        justify-items: center;
+        
     }
     .select_diets{
         
@@ -104,6 +105,13 @@ body{
     .barras{
         grid-column: 1/2;
         font-size: 14px;
+    }
+    .barras{
+        justify-content: space-evenly;
+    }
+    .select_diets{
+       margin: 0 ;
+       margin-bottom: 15px;
     }
     
 }

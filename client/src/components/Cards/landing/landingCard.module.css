@@ -34,3 +34,12 @@ transition: 0.5s;
     margin: auto;
     
 }
+@media (max-width: 900px) {
+ .caja_cards{
+    font-size: 1em;
+    width: 100%;
+ }   
+ .card{
+    margin: 25px;
+ }
+}
