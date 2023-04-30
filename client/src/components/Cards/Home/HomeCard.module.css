@@ -132,3 +132,34 @@ h2{
     
       
     }
+.small_caja{
+    
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 85%;
+    align-content:space-between ;
+    
+    
+}
+.small_details h2{
+    font-size:16px;
+    font-weight: 800;
+}
+.small_details{
+    width: 100%;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+    position: relative;
+    
+}
+.small_diets{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 25px;
+    margin-bottom: 35px;
+
+}

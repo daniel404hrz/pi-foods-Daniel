@@ -1,14 +1,14 @@
 const initialState = {
     recipes: [],
     allRecipes:[],
-    
+    addRecipes:[]
   };
 
 
 const reducer=(state = initialState, action) =>{
     switch(action.type){
         case 'GET_RECIPES':
-            return { ...state, recipes:action.payload, allRecipes:action.payload}
+            return { ...state, recipes:[...state.addRecipes, ...action.payload], allRecipes:[...state.addRecipes, ...action.payload]}
         case 'FILTER':
             if(action.payload === 'All') return {...state, recipes:state.allRecipes}
             else if(action.payload === 'bdRecipes'){
@@ -32,7 +32,8 @@ const reducer=(state = initialState, action) =>{
             break
         case 'SEARCH':
             return {...state,recipes:action.payload, allRecipes:action.payload}
-
+        case 'PUSH':
+            return {...state,addRecipes:  action.payload}
         default:
             return{...state}
        

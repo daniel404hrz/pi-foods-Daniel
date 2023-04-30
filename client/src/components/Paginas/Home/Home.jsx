@@ -12,7 +12,7 @@ export default function Home({diets}){
     const recipesApi=useSelector(state => state.recipes );
     const [recipes, setRecipes] = useState([])
     const [current, setCurrent] = useState(0)
-
+console.log(recipesApi);
     
     
     const totalPages = Math.ceil(recipesApi.length / 9);

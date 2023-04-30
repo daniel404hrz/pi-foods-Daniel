@@ -9,16 +9,43 @@ import { Form } from './components/Paginas/form/form';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
+import { API_KEY } from './redux/actions';
+
+const getDietsInfo =async()=> {
+  
+    const apiUrl = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=50`);
+    const dietas = []
+    const response = apiUrl.data.results.flatMap((receta) => receta.diets)
+    apiUrl.data.results.forEach((receta) => {
+      if (receta.vegetarian && !dietas.includes("vegetarian")) {
+        dietas.push("vegetarian");
+      }
+    });
+    response.forEach((element) => {
+      if (element && !dietas.includes(element)) {
+        dietas.push(element)
+      }
+    })
+    return dietas
+  
+};
+
 function App() {
   const [diets, setDiets]= useState([])
+
   
   useEffect(()=>{
-    !diets.length && axios.get('http://localhost:3001/diets')
-        .then(response=>{
-            setDiets(response.data)
-        })
+    // !diets.length && axios.get('http://localhost:3001/diets')
+    //     .then(response=>{
+    //         setDiets(response.data)
+    //     })
+    async function fetchDiets() {
+      const dietInfo = await getDietsInfo();
+      setDiets(dietInfo);
+    }
+    fetchDiets();
 
-  },[diets])
+  },[])
   
   
   const {pathname} = useLocation()

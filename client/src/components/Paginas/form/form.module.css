@@ -1,7 +1,17 @@
+body{
+  background-image: url('../Home/img/fondo.jpg');
+    background-size:cover; /* para hacer que la imagen ocupe todo el espacio disponible */
+    background-repeat: no-repeat; /* para evitar que la imagen se repita */
+    background-color: rgb(70, 70, 70);
+    background-blend-mode: soft-light;
+    
+}
 .box{
+  
     display: flex;
     justify-content: center;
     margin: 15px;
+    
 
     
 }
