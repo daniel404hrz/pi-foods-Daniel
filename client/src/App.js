@@ -15,7 +15,7 @@ function App() {
 
   
   useEffect(()=>{
-    !diets.length && axios.get('https://food-api-1vap.onrender.com//diets')
+    !diets.length && axios.get('https://food-api-1vap.onrender.com/diets')
         .then(response=>{
             setDiets(response.data)
         })
