@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const URL_BASE = "http://localhost:3001/recipes";
+export const URL_BASE = "https://food-api-1vap.onrender.com/recipes";
 
 export const getRecipes=()=>{
     return async function (dispatch) {
