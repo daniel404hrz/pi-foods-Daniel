@@ -15,13 +15,15 @@ function App() {
 
   
   useEffect(()=>{
-    !diets.length && axios.get('https://food-api-1vap.onrender.com/diets')
+    axios.get('https://food-api-1vap.onrender.com/diets')
+    
         .then(response=>{
-            setDiets(response.data)
-        })
+          
+          setDiets(response.data)
+        }).catch(err=>alert('Error '+ err.message))
     
 
-  },[diets])
+  },[])
   
   
   const {pathname} = useLocation()

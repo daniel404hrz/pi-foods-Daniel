@@ -10,7 +10,7 @@ export default function Landing(){
 
   useEffect(() => {
     function handleScroll() {
-      setScroll(window.pageYOffset > 0);
+      setScroll(window.scrollY > 0);
     }
 
     window.addEventListener("scroll", handleScroll);
