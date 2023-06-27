@@ -28,7 +28,7 @@ function App() {
   
   const {pathname} = useLocation()
   return (
-    <div className="App">
+    <div >
       {pathname !== '/' && <SearchBar/>}
       <ScrollToTop />
       <Routes>

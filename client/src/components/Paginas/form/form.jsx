@@ -112,7 +112,7 @@ const [errors, setErrors] = useState({
                 
                 <div className={styles.box_inputs_form}>
                 <label htmlFor="image">Imagen: </label>
-                <input type="text" id="image" name='image' onChange={onChange}/>
+                <input type="file"  accept="image/*" id="image" name='image' onChange={onChange}/>
                 
                 <label htmlFor="">Dietas:* </label>
                 {errors.dietTypes && <p className={styles.error_text}>{errors.dietTypes}</p>}
